@@ -1,0 +1,13 @@
+#!/bin/sh
+
+curl -L --user $1:$2 http://downloads.datastax.com/enterprise/opscenter.tar.gz --output opscenter.tar.gz
+curl -L --user $1:$2 http://downloads.datastax.com/enterprise/dse.tar.gz --output dse-bin.tar.gz
+
+# DataStax Agent debian package can be downloaded from
+# wget --user=$USER --password=$PASS http://debian.datastax.com/enterprise/pool/datastax-agent_6.0.0_all.deb
+# you may want to replace the specific version with the corresponding downloaded package name. When
+# downloaded, please remove the version number part of the filename (or create a symlink), so the
+# resulting file is named datastax-agent_all.deb (that way the docker file itself remains version
+# independent).
+
+curl -L --user $1:$2 debian.datastax.com/enterprise/pool/datastax-agent_6.0.8_all.deb --output datastax-agent_all.deb
