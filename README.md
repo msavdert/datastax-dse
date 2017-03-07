@@ -5,8 +5,9 @@
 3. docker run -d -p 8888:8888 --name <container_name> <image_name>
 
 ####### For example
-1. docker build . -t joshnykamp/opscenter -f OpscDockerfile
-2. docker run -d -p 8888:8888 --name joshnykampopscenter joshnykamp/opscenter
+1. docker build . -t melihsavdert/opscenter:6.0.8 -f ./OpscDockerfile
+2. docker build . -t melihsavdert/dse:5.0.6
+2. ./scripts/start_docker_cluster.sh melihsavdert/dse:5.0.6 melihsavdert/opscenter:6.0.8 3
 
 When container is up:
 
